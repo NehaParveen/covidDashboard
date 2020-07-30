@@ -30,17 +30,25 @@ export class LoginComponent implements OnInit {
   }
 
   async googleLogin() {
-    this.loader.show();
-    let loggedIn = await this.authService.loginWithGoogle();
-    this.loader.hide();
-    if(loggedIn){
-      this.router.navigate(['home']);
-    } else {
-      this._snackBar.open('Login Failed', 'ok', {
-        duration: 2000,
-      });
+    try {
+      this.loader.show();
+      let loggedIn = await this.authService.loginWithGoogle();
+      this.loader.hide();
+      if (loggedIn) {
+        this.router.navigate(['home']);
+      } else {
+        this._snackBar.open('Login Failed', 'ok', {
+          duration: 2000,
+        });
+      }
     }
+  catch(e){
+    this._snackBar.open('Login Failed', 'ok', {
+      duration: 2000,
+    });
   }
-
-
+  finally{
+      this.loader.hide();
+  }
+  }
 }
