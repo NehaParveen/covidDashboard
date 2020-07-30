@@ -1,13 +1,57 @@
-<div>
-  <div>
-    <form>
-      <input type="text" placeholder="Email">
-      <input type="password" placeholder="password">
-      <button >Submit</button>
-    </form>
-    <button >Forgot password?</button>
-    <button >New user??</button>
-    <button (click)="googleLogin()">Signinwith google</button>
+<div class="outer-container">
+  <mat-toolbar>
+    <mat-toolbar-row>
+      <div class="toolbar-container">
+        <div>
+          <h2>Welcome to the latest Covid19 Data</h2>
+        </div>
+        <div>
+          <button mat-button color="primary">Register</button>
+        </div>
+      </div>
+    </mat-toolbar-row>
+  </mat-toolbar>
+  <div class="text-container">
+    <div>
+      <h2>Welcome Back</h2>
+    </div>
+    <div>
+      <h5>Login to see the latest covid19 updates</h5>
+    </div>
+  </div>
+
+  <div class="login-card">
+    <mat-card>
+      <form>
+        <div class="form-container">
+          <div class="input-container">
+            <mat-form-field appearance="outline">
+              <mat-label>Email</mat-label>
+              <input matInput type="text" placeholder="Email">
+            </mat-form-field>
+          </div>
+          <div class="input-container">
+            <mat-form-field appearance="outline">
+              <mat-label>Password</mat-label>
+              <input matInput type="password" placeholder="password">
+            </mat-form-field>
+          </div>
+          <button (click)="snackBar()" class="login-button" mat-raised-button> Login</button>
+
+          <button class="google-login-container" mat-raised-button (click)="googleLogin()">
+            <div><img class="logo" src="assets/google.png">&nbsp;Login With Google</div>
+          </button>
+
+        </div>
+
+      </form>
+
+
+    </mat-card>
+
+    <!-- <button>Forgot password?</button>
+    <button>New user??</button> -->
+
 
   </div>
 </div>

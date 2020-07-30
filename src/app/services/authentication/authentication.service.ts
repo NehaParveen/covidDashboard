@@ -12,14 +12,14 @@ export class AuthenticationService {
   user: User;
 
   constructor(public afAuth: AngularFireAuth, public router: Router) {
-    this.afAuth.authState.subscribe(user => {
-      if (user) {
-        this.user = user;
-        localStorage.setItem('user', JSON.stringify(this.user));
-      } else {
-        localStorage.setItem('user', null);
-      }
-    })
+    // this.afAuth.authState.subscribe(user => {
+    //   if (user) {
+    //     this.user = user;
+    //     localStorage.setItem('user', JSON.stringify(this.user));
+    //   } else {
+    //     localStorage.setItem('user', null);
+    //   }
+    // })
   }
 
 
@@ -29,9 +29,15 @@ export class AuthenticationService {
     this.router.navigate(['login']);
   }
 
-  async loginWithGoogle() {
-    await this.afAuth.signInWithPopup(new auth.GoogleAuthProvider())
-    this.router.navigate(['home']);
+  async loginWithGoogle(): Promise<boolean> {
+    let user = await this.afAuth.signInWithPopup(new auth.GoogleAuthProvider());
+    if (user != null || user != undefined) {
+      localStorage.setItem('user', JSON.stringify(user.user));
+      return true;
+    } else {
+      return false;
+    }
+
   }
   isAuthenticated() {
     const user = JSON.parse(localStorage.getItem('user'));

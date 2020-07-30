@@ -10,7 +10,9 @@ import { CovidData } from 'src/app/Models/covidData';
 export class CardComponent implements OnInit {
 
   covidData: CovidData;
-  constructor(private covidDataService: CoviddataService) { }
+  constructor(private covidDataService: CoviddataService) {
+    // this.covidData = {} as CovidData;
+  }
 
   ngOnInit(): void {
     this.initialiseData();

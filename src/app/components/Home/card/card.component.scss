@@ -1,0 +1,37 @@
+.outer-container {
+  .card-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    margin: 0.5rem;
+    .inner-container {
+      min-width: 9rem;
+      margin-bottom: 2rem;
+
+      .mat-card-header {
+        color: white;
+        text-shadow: 1px 1px rgba(0, 0, 0, 0.4);
+      }
+      .mat-card-subtitle {
+        color: white;
+      }
+      .mat-card-title {
+        font-size: 1.5rem;
+      }
+    }
+    .green {
+      background-color: #39a240;
+    }
+    .red {
+      background-color: red;
+    }
+    .yellow {
+      background-color: orange;
+    }
+    .blue {
+      background-color: blue;
+    }
+  }
+}

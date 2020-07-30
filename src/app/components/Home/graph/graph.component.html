@@ -1,1 +1,18 @@
-<p>graph works!</p>
+<div *ngIf="districtSummary">
+  <div *ngFor="let val of districtSummary.summary | keyvalue">
+    <!-- {{val.key}}
+    {{val.value.active}}
+   -->
+  </div>
+</div>
+<div class="outer-container">
+  <div class="graph-container">
+    <ngx-charts-bar-vertical (window:resize)="onResize($event)"
+    [view]="view" [scheme]="colorScheme" [results]="single" [gradient]="gradient"
+      [xAxis]="showXAxis" [yAxis]="showYAxis" [legend]="showLegend"  [showXAxisLabel]="showXAxisLabel"
+      [showYAxisLabel]="showYAxisLabel" [xAxisLabel]="xAxisLabel" [yAxisLabel]="yAxisLabel" (select)="onSelect($event)">
+    </ngx-charts-bar-vertical>
+
+  </div>
+
+</div>

@@ -15,6 +15,20 @@ import { AngularFireAuthModule } from '@angular/fire/auth';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AuthGuard } from './services/authentication/auth.guard';
 import { HttpClientModule } from '@angular/common/http';
+import { NgxChartsModule } from '@swimlane/ngx-charts';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatTableModule } from '@angular/material/table';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { MatPaginatorModule } from '@angular/material/paginator';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import { MatSortModule } from '@angular/material/sort';
+import {DragDropModule} from '@angular/cdk/drag-drop';
+import {MatCardModule} from '@angular/material/card';
+import {MatButtonModule} from '@angular/material/button';
+import {MatToolbarModule} from '@angular/material/toolbar';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { LoaderComponent } from './components/loader/loader.component';
 
 @NgModule({
   declarations: [
@@ -24,6 +38,7 @@ import { HttpClientModule } from '@angular/common/http';
     GraphComponent,
     CardComponent,
     TableComponent,
+    LoaderComponent,
   ],
   imports: [
     BrowserModule,
@@ -34,7 +49,22 @@ import { HttpClientModule } from '@angular/common/http';
     AngularFireAuthModule,
     ReactiveFormsModule,
     FormsModule,
+    NgxChartsModule,
+    BrowserAnimationsModule,
+    MatTableModule,
+    MatProgressSpinnerModule,
+    MatPaginatorModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatSortModule,
+    DragDropModule,
+    MatCardModule,
+    MatButtonModule,
+    MatToolbarModule,
+    MatSnackBarModule,
+
   ],
+  exports: [MatSortModule],
   providers: [AuthGuard],
   bootstrap: [AppComponent]
 })

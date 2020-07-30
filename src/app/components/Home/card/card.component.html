@@ -1,32 +1,58 @@
-<div>
-  <div>
+<div *ngIf="covidData" class="outer-container">
+  <div class="card-container">
     <div>
-      <h3>Total Cases</h3>
-      <h3>{{covidData.summary.total_obs}}</h3>
+      <div>
+        <mat-card class="inner-container blue">
+          <mat-card-header>
+            <mat-card-title>{{covidData.summary.total_obs}}</mat-card-title>
+            <mat-card-subtitle>Total Cases</mat-card-subtitle>
+          </mat-card-header>
+        </mat-card>
+        <!-- <h3>Total Cases</h3>
+      <h3>{{covidData.summary.total_obs}}</h3> -->
+      </div>
     </div>
-  </div>
-  <div>
     <div>
-      <h3>
+      <div>
+        <mat-card class="inner-container green">
+          <mat-card-header>
+            <mat-card-title>{{covidData.summary.recovered}}</mat-card-title>
+            <mat-card-subtitle> Total Recovered</mat-card-subtitle>
+          </mat-card-header>
+        </mat-card>
+        <!-- <h3>
         Total Recovered
       </h3>
-      <h3>{{covidData.summary.recovered}}</h3>
+      <h3>{{covidData.summary.recovered}}</h3> -->
+      </div>
     </div>
-  </div>
-  <div>
     <div>
-      <h3>
+      <div>
+        <mat-card class="inner-container yellow">
+          <mat-card-header>
+            <mat-card-title>{{covidData.summary.active}}</mat-card-title>
+            <mat-card-subtitle>Total Active cases</mat-card-subtitle>
+          </mat-card-header>
+        </mat-card>
+        <!-- <h3>
         Total Active cases
       </h3>
-      <h3>{{covidData.summary.active}}</h3>
+      <h3>{{covidData.summary.active}}</h3> -->
+      </div>
     </div>
-  </div>
-  <div>
     <div>
-      <h3>
+      <div>
+        <mat-card class="inner-container red">
+          <mat-card-header>
+            <mat-card-title>{{covidData.summary.deceased}}</mat-card-title>
+            <mat-card-subtitle> Total Deaths</mat-card-subtitle>
+          </mat-card-header>
+        </mat-card>
+        <!-- <h3>
         Total Deaths
       </h3>
-      <h3>{{covidData.summary.deceased}}</h3>
+      <h3>{{covidData.summary.deceased}}</h3> -->
+      </div>
     </div>
   </div>
 </div>
