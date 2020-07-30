@@ -25,7 +25,7 @@ export class TableComponent implements OnInit, AfterViewInit  {
     this.dataSource = new MatTableDataSource<Report>(testData.reports);
     // this.dataSource.sort = this.sort;
     this.dataSource.paginator = this.paginator;
-    console.log(testData)
+    // console.log(testData)
   }
   ngAfterViewInit(): void {
     this.dataSource.paginator = this.paginator;

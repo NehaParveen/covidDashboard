@@ -72,7 +72,7 @@ export class GraphComponent implements OnInit {
         }
       );
     }
-    console.log(JSON.stringify(this.single));
+    // console.lo/g(JSON.stringify(this.single));
   }
 
 }
